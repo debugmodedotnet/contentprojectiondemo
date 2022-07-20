@@ -1,0 +1,20 @@
+
+<div>
+    <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+        <ng-content select=".header"></ng-content>
+        <br/>
+        <label>
+            Email address
+            <input type="email" name="email" ngModel>
+        </label>
+        <label>
+            Password
+            <input type="password" name="password" ngModel>
+        </label>
+        <ng-content select=".action"></ng-content>
+        <ng-content select="app-auth-remember"></ng-content>
+        <div>
+            <app-auth-message [style.display]="(isShowMessage ? 'inherit':'none')"></app-auth-message>>
+        </div>
+    </form>
+</div>
